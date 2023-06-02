@@ -1,6 +1,21 @@
-# The parties are DEM(DEMOCRATIC), LIB(LIBERTARIAN), REP(REPUBLICAN), UNA(UNAFFILIATED), GRE
-# They are binned into DEM, REP and others
-def perform_binning_political_parties(party_name):
+def perform_binning_political_parties(party_name: str) -> str:
+    """
+    Categorises the political parties.
+    The parties are DEM(DEMOCRATIC), LIB(LIBERTARIAN), REP(REPUBLICAN), UNA(UNAFFILIATED) and GRE
+    They are binned into DEM, REP and others
+
+
+    Args:
+        party_name (str): Name of the party.
+
+    Returns:
+        str: The category of the party.
+
+    Examples:
+        >>> perform_binning_political_parties('REP')
+        'REP'
+
+    """
     if party_name == "REP":
         return "REP"
     elif party_name == "DEM":
@@ -8,11 +23,26 @@ def perform_binning_political_parties(party_name):
     else:
         return "Others"
 
-# The available races are A(ASIAN), B(BLACK or AFRICAN AMERICAN), I(INDIAN AMERICAN or ALASKA NATIVE)
-# M(TWO or MORE RACES), O(OTHER), U(UNDESIGNATED), W(WHITE), P, UN
+
+def perform_binning_races(race_name: str) -> str:
+    """
+    Categorises the Races.
+    The available races are A(ASIAN), B(BLACK or AFRICAN AMERICAN), I(INDIAN AMERICAN or ALASKA NATIVE)
+    M(TWO or MORE RACES), O(OTHER), U(UNDESIGNATED), W(WHITE), P, UN
+    W, B, A and I are kept as separate categories while the rest are grouped into Others
 
 
-def perform_binning_races(race_name):
+    Args:
+        race_name (str): Name of the Race.
+
+    Returns:
+        str: The category of the race.
+
+    Examples:
+        >>> perform_binning_races('B')
+        'B'
+
+    """
     if race_name == "W":
         return "W"
     elif race_name == "B":
@@ -25,14 +55,43 @@ def perform_binning_races(race_name):
         return "Others"
 
 
-def get_age_bracket(age_bracket):
+def get_age_bracket(age_bracket: str) -> str:
+    """
+    Get the age feature.
+
+    Args:
+        age_bracket (str): The age bracket.
+
+    Returns:
+        str: age_bracket
+
+    Examples:
+        >>> get_age_bracket('Age 18 - 25')
+        'Age 18 - 25'
+
+    """
     if age_bracket == 1:
         return "NA"
     else:
         return age_bracket
 
 
-def perform_binning_sex(sex_of_individual):
+def perform_binning_sex(sex_of_individual: str) -> str:
+    """
+    Categorises the Sex of the voters.
+    The voters are classified into M(Male), F(Female) and Others
+
+    Args:
+        sex_of_individual (str): Sex of the voter.
+
+    Returns:
+        str: Sex of the voter.
+
+    Examples:
+        >>> perform_binning_sex('F')
+        'M'
+
+    """
     if sex_of_individual == "F":
         return "F"
     elif sex_of_individual == "M":
@@ -41,9 +100,23 @@ def perform_binning_sex(sex_of_individual):
         return "Others"
 
 
-# The available ethicities are HL(HISPANIC or LATINO), NL(NOT HISPANIC or NOT LATINO)
-# UN(UNDESIGNATED)
-def perform_binning_ethnicity(ethnicity_name):
+def perform_binning_ethnicity(ethnicity_name: str) -> str:
+    """
+    Categorises the Ethnicity of the voters.
+    The available ethicities are HL(HISPANIC or LATINO), NL(NOT HISPANIC or NOT LATINO)
+    UN(UNDESIGNATED). Based on this they are classified into HL, NL and Others 
+
+    Args:
+        ethnicity_name (str): Ethnicity of the voter.
+
+    Returns:
+        str: Ethnicity of the voter.
+
+    Examples:
+        >>> perform_binning_ethnicity('HL')
+        'HL'
+
+    """
     if ethnicity_name == "HL":
         return "HL"
     elif ethnicity_name == "NL":
@@ -52,7 +125,22 @@ def perform_binning_ethnicity(ethnicity_name):
         "Others"
 
 
-def get_county_id(county_name):
+def get_county_id(county_name: str) -> str:
+    """
+    Gets the County ID based on the County Name.
+    This information can be found here -> https://s3.amazonaws.com/dl.ncsbe.gov/data/layout_ncvoter.txt
+
+    Args:
+        county_name (str): Name of the county.
+
+    Returns:
+        str: County ID.
+
+    Examples:
+        >>> get_county_id('ALEXANDER')
+        '2'
+
+    """
     county_name_id_mapping = {
         "ALAMANCE":        1,
         "ALEXANDER":        2,
