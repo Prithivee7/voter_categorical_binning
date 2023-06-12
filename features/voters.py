@@ -17,9 +17,9 @@ def perform_binning_political_parties(party_name: str) -> str:
 
     """
     if party_name == "REP":
-        return "REP"
+        return "Republican"
     elif party_name == "DEM":
-        return "DEM"
+        return "Democratic"
     else:
         return "Others"
 
@@ -44,13 +44,13 @@ def perform_binning_races(race_name: str) -> str:
 
     """
     if race_name == "W":
-        return "W"
+        return "White"
     elif race_name == "B":
-        return "B"
+        return "Black"
     elif race_name == "A":
-        return "A"
+        return "Asian"
     elif race_name == "I":
-        return "I"
+        return "Indian American"
     else:
         return "Others"
 
@@ -93,9 +93,9 @@ def perform_binning_sex(sex_of_individual: str) -> str:
 
     """
     if sex_of_individual == "F":
-        return "F"
+        return "Female"
     elif sex_of_individual == "M":
-        return "M"
+        return "Male"
     else:
         return "Others"
 
