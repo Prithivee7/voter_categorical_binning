@@ -13,7 +13,7 @@ def perform_binning_political_parties(party_name: str) -> str:
 
     Examples:
         >>> perform_binning_political_parties('REP')
-        'REP'
+        'Republican'
 
     """
     if party_name == "REP":
@@ -29,7 +29,7 @@ def perform_binning_races(race_name: str) -> str:
     Categorises the Races.
     The available races are A(ASIAN), B(BLACK or AFRICAN AMERICAN), I(INDIAN AMERICAN or ALASKA NATIVE)
     M(TWO or MORE RACES), O(OTHER), U(UNDESIGNATED), W(WHITE), P, UN
-    W, B, A and I are kept as separate categories while the rest are grouped into Others
+    White, Black, Asian and Indian American are kept as separate categories while the rest are grouped into Others
 
 
     Args:
@@ -40,7 +40,7 @@ def perform_binning_races(race_name: str) -> str:
 
     Examples:
         >>> perform_binning_races('B')
-        'B'
+        'Black'
 
     """
     if race_name == "W":
@@ -89,7 +89,7 @@ def perform_binning_sex(sex_of_individual: str) -> str:
 
     Examples:
         >>> perform_binning_sex('F')
-        'M'
+        'Female'
 
     """
     if sex_of_individual == "F":
@@ -114,13 +114,13 @@ def perform_binning_ethnicity(ethnicity_name: str) -> str:
 
     Examples:
         >>> perform_binning_ethnicity('HL')
-        'HL'
+        'Hispanic or Latino'
 
     """
     if ethnicity_name == "HL":
-        return "HL"
+        return "Hispanic or Latino"
     elif ethnicity_name == "NL":
-        return "NL"
+        return "NOT HISPANIC or NOT LATINO"
     else:
         "Others"
 
